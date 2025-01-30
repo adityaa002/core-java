@@ -1,4 +1,4 @@
-package com.rays.basics;
+package com.rays.basics.initialPrograms;
 import java.util.*;
 public class TestDate {
 	public static void main(String[] args) {

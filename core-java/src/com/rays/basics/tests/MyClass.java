@@ -55,8 +55,10 @@ public class MyClass {
 			sum = (sum * 10) + r;
 			n = n / 10;
 		}
-		if (sum == n) {
-			System.out.println(n + "Number is palindrome");
+		if (sum == number) {
+			System.out.println(number + " : Number is palindrome");
+		}else {
+			System.out.println(number + " : Number isn't palindrome");
 		}
 
 	}

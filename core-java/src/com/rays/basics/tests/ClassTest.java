@@ -9,8 +9,8 @@ public class ClassTest {
 		m.additiion(10, 20);
 		m.multiply(3, 5);
 		m.divide(100, 20);
+		m.palindrome(121);
 		m.printTableTwo(20);
-		m.palindrome(12321);
 
 	}
 }

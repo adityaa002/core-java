@@ -1,4 +1,4 @@
-package com.rays.basics;
+package com.rays.basics.initialPrograms;
 
 public class ParseInt {
 	public static void main(String[] args) {

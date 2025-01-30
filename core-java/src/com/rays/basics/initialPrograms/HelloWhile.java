@@ -1,4 +1,4 @@
-package com.rays.basics;
+package com.rays.basics.initialPrograms;
 
 public class HelloWhile {
 	public static void main(String[] args) {
