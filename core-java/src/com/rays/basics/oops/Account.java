@@ -5,62 +5,90 @@ public class Account {
 	private String accountNumber;
 	private String accountType;
 	private double balance;
-	private double currentBalance;
-	private double transferredAmount;
 
-	public String getNumber() {
-		return accountNumber;
-	}
-
-	public void setNumber(String accountNumber) {
+	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
-	public String getAccountType(String accountNumber) {
-		return accountType;
+	public String getAccountNumber() {
+		return accountNumber;
 	}
 
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
 
-	public void deposit(String accountNumber, int d) {
-		this.balance = balance + d;
-		System.out.println("Deposited amount : " + d);
-		System.out.println("Total balance : " + balance);
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setBalance(double balance) {
+		if (balance >= 0) {
+			this.balance = balance;
+		} else {
+			System.out.println("INVALID BALANCE");
+		}
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	// DEPOSIT AMOUNT METHOD
+	public void deposit(double amount) {
+		if (amount > 0) {
+			balance += amount;
+			System.out.println("DEPOSITED AMOUNT :" + amount);
+			System.out.println("NEW BALANCE : " + balance);
+		} else {
+			System.out.println("INVALID DEPOSIT AMOUNT");
+		}
 
 	}
 
-	public void withdrawal(String accountNumber, int w) {
-		// currentBalance = balance;
-		System.out.println("withdrawal amount : " + w);
-		balance = balance - w;
-		System.out.println("current balance : " + balance);
+	// WITHDRAWAL AMOUNT METHOD
+	public void withdrawal(double amount) {
+		if (amount < balance && amount > 0) {
+			balance -= amount;
+			System.out.println("WITHDRAWAL AMOUNT : " + amount);
+			System.out.println("REMAINING BALANCE : " + balance);
+		} else if (amount > balance) {
+			System.out.println("INSUFFICIENT FUNDS !  BALANCE " + balance);
+		} else {
+			System.out.println("INVALID WITHDRAWAL AMOUNT");
+		}
 
 	}
 
-	public void setBalance(String accountNumber, double balance) {
-		this.balance = balance;
-		System.out.println("Balance for account - " + accountNumber + " is " + balance);
-		currentBalance = balance;
-	}
-
-	public void getBalance(String accountNumber) {
-		this.balance = currentBalance;
-		//System.out.println("Balance for account - " + accountNumber + " is " + currentBalance);
-
-	}
-
-	public void fundTransfer(String accountNumber, int ft, String ToaccountNumber) {
-		System.out.println("Transferring fund amount : " + ft + " FROM account " + accountNumber);
-		this.balance = currentBalance + ft;
-		System.out.println("Now your current balance of Account " + ToaccountNumber + " is " + balance);
-		
+	// FUNDTRANSFER AMOUNT METHOD
+	public void fundTransfer(Account accountToTransfer, double amount) {
+		if (amount > 0 && amount <= balance) {
+			balance = balance - amount;
+			accountToTransfer.balance = accountToTransfer.balance + amount;
+			System.out.println("Transferred " + amount + " to " + accountToTransfer.getAccountNumber());
+			System.out.println("Your New Balance: " + this.balance);
+		} else {
+			System.out.println("Transfer failed. Insufficient funds or invalid amount");
+		}
 
 	}
 
-	public void payBill() {
+	// PAYBILLS AMOUNT METHOD
+	public void payBills(String biller, double amount) {
+		if (amount < balance && amount > 0) {
+			balance -= amount;
+			System.out.println("Bill : " + amount + " PAID TO " + biller);
+			System.out.println("AVAILABLE BALANCE : " + balance);
+		} else {
+			System.out.println("Transfer failed. Insufficient funds or invalid amount");
+		}
 
 	}
 
+	public void displayAccountInfo(Account account) {
+		System.out.println("ACCOUNT DETAILS");
+		System.out.println("ACCOUNT NUMBER :" + accountNumber);
+		System.out.println("ACCOUNT TYPE : " + accountType);
+		System.out.println("AVAILABLE BALANCE :" + balance);
+	}
 }
