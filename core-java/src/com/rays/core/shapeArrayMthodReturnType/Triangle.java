@@ -1,18 +1,9 @@
-package com.rays.core.shapeArrayWithCnstr;
+package com.rays.core.shapeArrayMthodReturnType;
 
 public class Triangle extends Shape {
 
 	private int base;
 	private int height;
-
-	public Triangle() {
-
-	}
-
-	public Triangle(int b, int h) {
-		base = b;
-		height = h;
-	}
 
 	public void setBase(int base) {
 		this.base = base;

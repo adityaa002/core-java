@@ -1,20 +1,12 @@
-package com.rays.core.shapeArrayWithCnstr;
+package com.rays.core.shapeArrayWithoutCnst;
 
 public class Circle extends Shape {
-
 	private int radius;
-
-	public static final float PI = 3.14f;
-
-	public Circle() {
-	}
-
-	public Circle(int radius) {
-		this.radius = radius;
-	}
+	private static final float PI = 3.14f;
 
 	public void setRadius(int radius) {
 		this.radius = radius;
+
 	}
 
 	public int getRadius() {
@@ -23,7 +15,7 @@ public class Circle extends Shape {
 
 	@Override
 	public void area() {
-		double cArea = PI * radius * radius;
+		double cArea = (PI * radius * radius);
 		System.out.println("Area of circle : " + cArea);
 	}
 }

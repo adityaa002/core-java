@@ -1,18 +1,9 @@
-package com.rays.core.shapeArrayWithCnstr;
+package com.rays.core.shapeArrayWithoutCnst;
 
-public class Triangle extends Shape {
+public class Triangle extends Shape{
 
 	private int base;
 	private int height;
-
-	public Triangle() {
-
-	}
-
-	public Triangle(int b, int h) {
-		base = b;
-		height = h;
-	}
 
 	public void setBase(int base) {
 		this.base = base;
@@ -33,6 +24,6 @@ public class Triangle extends Shape {
 	@Override
 	public void area() {
 		double tArea = (base * height) / 2;
-		System.out.println("Area of Triangle : " + tArea);
+	System.out.println("Area of Triangle : " + tArea);
 	}
 }
