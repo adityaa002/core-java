@@ -3,6 +3,7 @@ package com.rays.core.exceptionHandling;
 public class TestCheckedException {
 
 	public static void main(String[] args) {
+		
 		try {
 			dad();
 		} catch (CheckedCustomException e) {

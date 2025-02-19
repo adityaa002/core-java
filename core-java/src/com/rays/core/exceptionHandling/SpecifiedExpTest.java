@@ -16,18 +16,10 @@ public class SpecifiedExpTest {
 
 			System.out.println(name.length());
 
-		} catch (ArithmeticException e) {
+		} catch (ArithmeticException | NullPointerException | ArrayIndexOutOfBoundsException e) {
 
-			System.out.println(e);
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-
-		} catch (NullPointerException e) {
-
-			System.out.println(e);
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-
+ 			System.out.println(e.getMessage());
+ 
 		} catch (Exception e) {
 
 			System.out.println(e);
