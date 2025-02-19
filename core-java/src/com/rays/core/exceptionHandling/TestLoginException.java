@@ -2,26 +2,20 @@ package com.rays.core.exceptionHandling;
 
 public class TestLoginException {
 	public static void main(String[] args) {
-		String login = "admin";
-		String pwd = "admin";
+		String login = "kunal";
+		String pwd = "kunal";
 
-		System.out.println("before");
-
-		if (login.equals("admin") && pwd.equals("adin")) {
-			System.out.println("Login Successful...!!!");
-
+		if (login.equals("kl") && login.equals("kunal")) {
+			System.out.println("Login Successfully...!!");
 		} else {
-			LoginException e = new LoginException("Invalid Credential.. Please enter valid credentials");
-
+			LoginException e = new LoginException("Invalid Credentials....!!!   Please enter valid credentials");
 			try {
 				throw e;
-			} catch (LoginException e2) {
-
-				System.out.println(e2);
-
+			} catch (LoginException e1) {
+				System.out.println(e.getMessage());
+				e1.printStackTrace();
 			}
-
 		}
-		System.out.println("After");
+
 	}
 }
