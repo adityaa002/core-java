@@ -6,41 +6,53 @@ import java.util.Collection;
 public class CustomCollection {
 	public static void main(String[] args) {
 
-		Collection l1 = new ArrayList();
+		Collection c = new ArrayList();
+		c.add("a");
+		c.add("b");
+		c.add("c");
+		c.add("d");
 
-		l1.add(1);
-		l1.add(2);
-		l1.add(3);
-		l1.add(4);
-		l1.add(5);
+		System.out.println(c);
 
-		System.out.println(l1);
+		Collection c1 = new ArrayList();
+		c1.add("e");
+		c1.add("e");
+		c1.add("f");
+		c1.add("g");
+		c1.add("h");
 
-		l1.add(6);
+		System.out.println(c1);
 
-		System.out.println(l1);
+		c.addAll(c1);
 
-		ArrayList l2 = new ArrayList();
-		l2.add('a');
-		l2.add('b');
-		l2.add('c');
-		l2.add('d');
-		l2.add('e');
+		System.out.println(c.isEmpty());
 
-		System.out.println(l2);
+		c.removeAll(c1);
+		System.out.println(c);
+		System.out.println(c1);
 
-		System.out.println(l1.isEmpty());
+		c.addAll(c1);
+		System.out.println(c);
 
-		System.out.println(l1.contains(4));
+		c.removeAll(c1);
+		System.out.println(c);
 
-		l1.addAll(l2);
-		System.out.println(l1);
+		c1.add("a");
+		System.out.println(c);
 
-		System.out.println();
-		l1.containsAll(l2);
-		l1.remove(6);
-		System.out.println(l1);
-		l1.retainAll(l2);
-		System.out.println(l1);
+		// c.clear();
+		System.out.println(c);
+		c.addAll(c1);
+		System.out.println(c);
+		System.out.println(c1);
+		System.out.println(c.containsAll(c1));
+
+		c.retainAll(c1);
+		c1.retainAll(c);
+		System.out.println(c);
+		System.out.println(c1);
+		c.size();
+		c1.size();
+
 	}
 }
