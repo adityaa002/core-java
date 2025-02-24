@@ -48,6 +48,7 @@ public class CustomCollection {
 		System.out.println(c.containsAll(c1));
 
 		c.retainAll(c1);
+
 		c1.retainAll(c);
 		System.out.println(c);
 		System.out.println(c1);

@@ -4,31 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestList {
+
 	public static void main(String[] args) {
 		List l = new ArrayList();
 
-		l.add('a');
-		l.add('b');
-		l.add('c');
-		l.add('d');
+		l.add(1);
+		l.add(2);
+		l.add(3);
+		l.add(4);
+		l.add(5);
+		l.add(6);
 
-	System.out.println(l);
-		l.add(2, "one");
-//		System.out.println(l);
-//
-//		l.remove(0);
-//
-//		System.out.println(l.indexOf('c'));
-//		System.out.println(l);
-//		
-//		System.out.println(l.indexOf('b'));
-//		System.out.println(l.get(1));
-		
 		System.out.println(l);
-		System.out.println(l.indexOf('a'));
-		
-		
-		
- 	}
+		l.remove(2);
+		l.add(2, 3);
+		System.out.println(l);
+		l.set(3, 40);
+		System.out.println(l);
+		System.out.println(l.subList(2, 5));
+	}
 
 }
