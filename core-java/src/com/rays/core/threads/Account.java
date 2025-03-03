@@ -3,28 +3,34 @@ package com.rays.core.threads;
 public class Account {
 	private int balance = 0;
 
-	public synchronized int getBalance() { // Synchronized for thread safety
-		try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		return balance;
-	}
+	public void setBalance(int balance) {
 
-	public synchronized void setBalance(int balance) { // Synchronized for thread safety
 		try {
-			Thread.sleep(100);
+			Thread.sleep(200);
 		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.balance = balance;
+
 	}
 
-	public synchronized void deposite(String name, int amt) {
-		int total = getBalance();
-		total = total + amt;
-		setBalance(total);
-		System.out.println(name + " deposited: " + amt + ", Total Balance: " + getBalance());
+	public int getBalance() {
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return balance;
+
+	}
+
+	public void deposit(String name, int amt) {
+		synchronized (this) {
+			int total = balance + amt;
+			setBalance(total);
+		}
+			System.out.println(name + " " + getBalance());
 	}
 }
