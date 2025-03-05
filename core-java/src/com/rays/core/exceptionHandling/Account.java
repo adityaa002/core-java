@@ -19,7 +19,7 @@ public class Account {
 	}
 
 // Withdraw method
-	public void withdraw(double amount) throws InsufficientFundsException {
+	public void withdraw(double amount) throws InsufficientFundsException  {
 		if (amount > 0 && amount <= balance) {
 			balance = balance - amount;
 			System.out.println("Withdrawn: " + amount);
