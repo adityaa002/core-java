@@ -1,3 +1,4 @@
+
 package com.rays.core.practice;
 
 public class TryFinally {
@@ -11,6 +12,7 @@ public class TryFinally {
 		} finally {
 			System.out.println("finally is executed");
 			// TODO: handle finally clause
+			// always executed
 		}
 
 		/*
