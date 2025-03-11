@@ -16,7 +16,7 @@ public class TestHashMap {
 		map.put("3", null);
 		map.put("null", null);
 
-		// Gives value at key '1';
+//		// Gives value at key '1';
 		String str = (String) map.get(1);
 		// System.out.println(str);
 
