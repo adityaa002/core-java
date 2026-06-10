@@ -5,24 +5,22 @@ import java.util.Arrays;
 public class Anagram {
 	public static void main(String[] args) {
 
-		String a = "listen";
-		String b = "silent";
+		String a = "adi";
+		String b = "ida";
 
-		String aa = a.toLowerCase();
-		String bb = b.toLowerCase();
-
-		char[] c = aa.toCharArray();
-		char[] d = bb.toCharArray();
-
-		Arrays.sort(c);
-		Arrays.sort(d);
-
-		if (Arrays.equals(c, d)) {
-			System.out.println("given string " + a + " and " + b + " are Anagram !");
-		} else {
-			System.out.println("given string " + a + " and " + b + " aren't Anagram !");
+		char[] aa = a.toCharArray();
+		char[] bb = b.toCharArray();
+		
+		Arrays.sort(aa);
+		Arrays.sort(bb);
+		
+		if(Arrays.equals(aa,bb)) {
+			System.out.println("Given String '"+ a +"' is anagram..!");
+		}else {
+			System.out.println("Given String '"+ a +"' is not anagram..!");
 
 		}
-
+		
+		
 	}
 }

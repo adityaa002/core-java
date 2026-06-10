@@ -4,15 +4,18 @@ public class CountChar {
 
 	public static void main(String[] args) {
 
-		String s = "introduction";
-		int count = 0;
+		String s = "aditya";
+		int count = 0 ;
 
 		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) == 'i') {
+
+			if(s.charAt(i)=='a') {
 				count++;
 			}
+			
+			
 		}
-		System.out.println("i = " + count);
+		System.out.println("a comes " +count+" times ..!" );
 
 	}
 }

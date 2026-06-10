@@ -3,18 +3,20 @@ package com.strings;
 public class ReverseAtSamePlace {
 	public static void main(String[] args) {
 
-		String name = "Aditya Sharma";
+		String s = "aditya sharma";
 
-		String[] arr = name.split(" ");
+		String[] c = s.split(" ");
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < c.length; i++) {
 
-			String ss = arr[i];
+			String ss = c[i];
 
 			for (int j = ss.length() - 1; j >= 0; j--) {
 				System.out.print(ss.charAt(j));
 			}
-			System.out.println();
+
+			System.out.print(" ");
 		}
+
 	}
 }
