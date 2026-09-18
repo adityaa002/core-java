@@ -1,0 +1,11 @@
+package com.rays.junit;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class TestLifeCycle {
+	
+	private static Connection conn = null;
+	private static PreparedStatement pstmt = null;
+
+}

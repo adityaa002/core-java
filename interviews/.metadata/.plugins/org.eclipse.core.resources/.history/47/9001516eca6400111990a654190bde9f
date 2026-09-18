@@ -1,0 +1,14 @@
+package com.javabasics;
+
+public class SecondHighest {
+	public static void main(String[] args) {
+
+	
+		int highest = 0 ;
+		
+		int secondHighest = 0 ;
+		
+		int[] arr = {33,22,55,66,77,34,34,13,42,89};
+	}
+
+}

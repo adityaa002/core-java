@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Rays\WorkSpaces\Interviews\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2366565555.index
+589448886.index
+3788255093.index
+1414557818.index
+3384760355.index
+2680855954.index

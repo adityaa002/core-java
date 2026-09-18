@@ -1,0 +1,22 @@
+package com.rays.junit;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TestLifeCycle {
+	
+	private static Connection conn = null;
+	private static PreparedStatement pstmt = null;
+
+	
+	@Be
+	public  static void beforeClass() {
+		
+	}
+}

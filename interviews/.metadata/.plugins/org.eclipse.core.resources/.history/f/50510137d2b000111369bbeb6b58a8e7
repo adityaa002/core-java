@@ -1,0 +1,38 @@
+package com.rays.junit;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class TestLifeCycle {
+
+	private static Connection conn = null;
+	private static PreparedStatement pstmt = null;
+
+	@BeforeClass
+	public static void beforeClass() throws ClassNotFoundException, SQLException {
+		System.out.println("before class");
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/interviews", "root", "root");
+
+	}
+
+	@Before
+	public void before() throws SQLException {
+		System.out.println("In Before test method..!");
+		String sql = "insert into emp(id,name,salary) values(?,?,?)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, 15);
+		pstmt.setString(2, "dev");
+		pstmt.setInt(3, 2300);
+
+	}
+}

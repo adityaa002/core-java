@@ -1,0 +1,10 @@
+package com.rays.log4j;
+
+import java.util.logging.Logger;
+
+public class TestLog4j {
+
+	public static void main(String[] args) {
+		Logger log = Logger.getLogger(TestLog4j.class);
+	}
+}

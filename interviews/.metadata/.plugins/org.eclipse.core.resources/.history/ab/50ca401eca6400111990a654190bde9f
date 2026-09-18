@@ -1,0 +1,27 @@
+package com.javabasics;
+
+public class SecondHighest {
+	public static void main(String[] args) {
+
+		int highest = 0;
+		int secondHighest = 0;
+
+		int[] arr = { 2, 3, 4, 7, 4, 33, 8, 99, 765, 33, 224, 5, 907 };
+
+		for (int i = 0; i < arr.length; i++) {
+
+			if (highest < arr[i]) {
+				secondHighest = highest;
+				highest = arr[i];
+			}
+
+			if (secondHighest < arr[i] && highest > arr[i]) {
+				secondHighest = arr[i];
+			}
+		}
+
+		System.out.println(highest);
+		System.out.println(secondHighest);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.rays.junit;
+
+import org.junit.Test;
+
+public class TestAssertNotNull {
+
+	@Test
+	public void testFindByPk() {
+		
+		UserBean bean = UserModel.findByPk(88);
+	}
+}

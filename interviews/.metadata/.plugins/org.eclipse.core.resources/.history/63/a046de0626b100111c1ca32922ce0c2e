@@ -1,0 +1,26 @@
+package com.rays.log4j;
+
+import org.apache.log4j.Logger;
+
+public class TestLog4j {
+
+	public static void main(String[] args) {
+		Logger log = Logger.getLogger(TestLog4j.class);
+
+		log.debug("This is debug level..!");
+		log.info("This is debug level..!");
+		log.warn("This is debug level..!");
+		log.error("This is debug level..!");
+		log.fatal("This is debug level..!");
+
+		try {
+			int a = 0;
+			int b = 5;
+
+			int res = b / a;
+		} catch (ArithmeticException e) {
+			log.debug("Arithmetic Exception :" + e.getMessage());
+		}
+
+	}
+}

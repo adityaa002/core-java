@@ -1,0 +1,14 @@
+package com.rays.junit;
+
+import static org.junit.Assert.assertNull;
+
+import java.sql.SQLException;
+
+public class TestAsseertNull {
+
+	public void testFindByPk() throws ClassNotFoundException, SQLException {
+		UserBean bean  = UserModel.findByPk(14);
+		
+		assertNull("UserBean is not null", bean);
+	}
+}

@@ -1,0 +1,9 @@
+package com.javabasics;
+
+public class BubbleSort {
+	public static void main(String[] args) {
+
+		int[] num = { 33, 44, 55, 11, 22, 65, 23, 6, 24, 2, 3, 5, 9, 8, 77, 65, 54 };
+
+	}
+}

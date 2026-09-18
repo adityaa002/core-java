@@ -1,0 +1,9 @@
+package com.rays.junit;
+
+public class TestAsseertNull {
+
+	public void testFindByPk() {
+		UserBean bean  = UserModel.findByPk(14);
+		
+	}
+}

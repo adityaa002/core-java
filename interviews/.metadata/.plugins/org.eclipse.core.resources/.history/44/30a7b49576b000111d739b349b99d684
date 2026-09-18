@@ -1,0 +1,102 @@
+package com.rays.junit;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class UserModel {
+
+	public static Integer nextPk() throws ClassNotFoundException, SQLException {
+		int pk = 0;
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/interviews", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select max(id) from emp");
+		ResultSet rs = pstmt.executeQuery();
+		while (rs.next()) {
+			pk = rs.getInt(1);
+			System.out.println(pk);
+		}
+		return pk + 1;
+
+	}
+
+	public static UserBean findByPk(int id) throws SQLException, ClassNotFoundException {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/interviews", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from emp where id = ?");
+
+		pstmt.setInt(1, id);
+
+		ResultSet rs = pstmt.executeQuery();
+		UserBean bean = null;
+
+		while (rs.next()) {
+
+			bean = new UserBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setSalary(rs.getInt(3));
+
+			System.out.println(rs.getInt(1));
+			System.out.println(rs.getString(2));
+			System.out.println(rs.getInt(3));
+		}
+
+		return bean;
+
+	}
+
+	public static UserBean findByName(String name) throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/interviews", "root", "root");
+
+		PreparedStatement pstmt = conn.prepareStatement("select * from emp where name = ? ");
+
+		pstmt.setString(1, name);
+
+		ResultSet rs = pstmt.executeQuery();
+
+		UserBean bean = null;
+		while (rs.next()) {
+			bean = new UserBean();
+
+			bean.setId(rs.getInt(1));
+			bean.setName(rs.getString(2));
+			bean.setSalary(rs.getInt(3));
+
+			System.out.println(rs.getInt(1));
+			System.out.println(rs.getString(2));
+			System.out.println(rs.getInt(3));
+
+		}
+
+		return bean;
+
+	}
+
+	public static void addUser(UserBean bean) throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/interviews", "root", "root");
+
+		PreparedStatement pstm = conn.prepareStatement("insert into emp values(?,?,?)");
+		
+	}
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		nextPk();
+		// findByPk(7);
+		// findByName("vikas");
+	}
+
+}
