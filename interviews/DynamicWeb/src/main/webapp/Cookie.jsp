@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session Tracking Example</title>
+</head>
+<body>
+    <h1>Session Tracking using URL_ReWriting</h1>
+
+    <%
+         HttpSession sessionn = request.getSession(true);
+
+
+       String sessionId = request.getRequestedSessionId();
+        sessionn.setAttribute("username", sessionId);
+
+
+        String encodedURL = response.encodeURL("/DynamicWeb/hello");
+    %>
+
+    <!-- Provide a link to the servlet -->
+    <a href="<%= encodedURL %>">Go to Session Servlet</a>
+</body>
+</html>

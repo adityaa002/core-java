@@ -1,0 +1,26 @@
+package com.rays.junit;
+
+import static org.junit.Assert.assertEquals;
+
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+public class TestAssertEquals {
+
+	@Test
+	public void testEqual() throws ClassNotFoundException, SQLException {
+
+		UserBean bean = UserModel.findByPk(3);
+
+		bean.setName("aditya");
+
+		UserModel.UpdateUser(bean);
+
+		bean = UserModel.findByPk(3);
+
+		assertEquals("aditya", bean.getName());
+
+	}
+
+}
