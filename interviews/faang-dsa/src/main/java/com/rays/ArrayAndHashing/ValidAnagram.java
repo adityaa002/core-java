@@ -3,7 +3,7 @@ package com.rays.ArrayAndHashing;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class ValidAnagram {
+public class ContainsDuplicate {
 
 	public static boolean valid(int[] nums) {
 		/*
